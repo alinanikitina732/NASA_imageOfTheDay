@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+
+    <style>
+        html {
+            background-color: lightskyblue;
+
+            color: brown;
+
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Welcome to Astronomy Image of the Day!</h1>
+    <h2>Enter the date for which you want to see the astronomy image of the day...</h2>
+
+    <form action="<%- url %>" method="post">
+        <strong>Year (YYYY):  </strong><input type="text" name="year">
+        <strong>Month (MM):  </strong><input type="text" name="month">
+        <strong>Day (DD):  </strong><input type="text" name="day">
+
+        <br>
+        <br>
+
+        <input type="reset" value="Reset">  <input type="submit" value="Submit date" onclick="return confirm('Are you sure you want to see a super cool astronomy image????');">
+
+        <br>
+    </form>
+
+    <hr>
+
+    <p><%- home %></p>
+
+</body>

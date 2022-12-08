@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+
+    <style>
+        html {
+            background-color: lightskyblue;
+
+            color: brown;
+
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Enter a date to view the associated image of the day!</h1>
+
+    <form action="<%- url %>" method="post">
+        <strong>Date (YYYY-MM-DD): </strong><input type="text" name="imageDate">
+        <br>
+        <br>
+        <input type="submit" value="Submit Request">
+    </form>
+
+    <hr>
+
+    <%- home %>
+</body>

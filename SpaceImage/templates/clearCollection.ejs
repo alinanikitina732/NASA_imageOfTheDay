@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+
+    <style>
+        html {
+            background-color: lightskyblue;
+
+            color: brown;
+
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Click the button below to remove all space images from your collection</h1>
+
+    <form action="<%- url %>" method="post">
+        <input type="submit" value="Remove all space images" onclick="return confirm('Are you sure you want to remove all space images?');">
+    </form>
+
+    <hr>
+
+    <%- home %>
+
+</body>
