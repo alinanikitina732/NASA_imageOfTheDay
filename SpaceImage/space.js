@@ -69,9 +69,9 @@ async function main() {
             // home page
             app.get("/", (request, response) => {
                 const variables = {
-                    addImage: `<a href=\"http://localhost:${portNumber}/image\">NASA astronomy image of the day</a>`,
-                    lookupImage: `<a href=\"http://localhost:${portNumber}/lookupImage\">Search for an already seen image</a>`,
-                    clearCollection: `<a href=\"http://localhost:${portNumber}/clearCollection\">Clear collection</a>`
+                    addImage: `<a href=\"/image\">NASA astronomy image of the day</a>`,
+                    lookupImage: `<a href=\"/lookupImage\">Search for an already seen image</a>`,
+                    clearCollection: `<a href=\"/clearCollection\">Clear collection</a>`
                 };
 
                 response.render("home", variables);
@@ -79,8 +79,8 @@ async function main() {
 
             // get date
             app.get("/image", (request, response) => {
-                const variables = { url: `http://localhost:${portNumber}/image`,
-                                    home: `<a href=\"http://localhost:${portNumber}\">HOME</a>` };
+                const variables = { url: `/image`,
+                                    home: `<a href=\"/\">HOME</a>` };
 
                 response.render("image", variables);
             });
@@ -114,15 +114,15 @@ async function main() {
                      imageTitle: data.title,
                      imageURL: data.url,
                      imageExplanation: data.explanation,
-                     home: `<a href=\"http://localhost:${portNumber}\">HOME</a>`
+                     home: `<a href=\"/\">HOME</a>`
                 };
                 
                 response.render("processImage", variables);
             });
 
             app.get("/lookupImage", (request, response) => {
-                const variables = { url: `http://localhost:${portNumber}/lookupImage`,
-                                    home: `<a href=\"http://localhost:${portNumber}\">HOME</a>` };
+                const variables = { url: `/lookupImage`,
+                                    home: `<a href=\"/\">HOME</a>` };
 
                 response.render("lookupImage", variables);
             });
@@ -149,15 +149,15 @@ async function main() {
                     imageTitle: title,
                     imageURL: url,
                     imageExplanation: explanation,
-                    home: `<a href=\"http://localhost:${portNumber}\">HOME</a>`
+                    home: `<a href=\"/\">HOME</a>`
                 }
 
                 response.render("processImage", variables);
             });
 
             app.get("/clearCollection", (request, response) => {
-                const variables = { url: `http://localhost:${portNumber}/processClearCollection`,
-                                    home: `<a href=\"http://localhost:${portNumber}\">HOME</a>` };
+                const variables = { url: `/processClearCollection`,
+                                    home: `<a href=\"/\">HOME</a>` };
 
                 response.render("clearCollection", variables);
             });
@@ -170,7 +170,7 @@ async function main() {
                 .deleteMany({});
                 
                 const variables = { num: result.deletedCount,
-                                    home: `<a href=\"http://localhost:${portNumber}\">HOME</a>` };
+                                    home: `<a href=\"/\">HOME</a>` };
 
                 response.render("processClearCollection", variables);
             });
