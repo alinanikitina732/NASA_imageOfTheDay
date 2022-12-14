@@ -34,7 +34,7 @@ if (process.argv.length != 3) {
 
 const portNumber = process.env.PORT || process.argv[2];
 
-process.stdout.write("Web server started and running at http://localhost:" + portNumber + "\n");
+process.stdout.write("Web server started and running at https://nasa-imageoftheday.onrender.com/" + "\n");
 let prompt = "Stop to shutdown the server: ";
 process.stdout.write(prompt);
 
