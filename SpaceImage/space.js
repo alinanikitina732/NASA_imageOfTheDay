@@ -89,7 +89,12 @@ async function main() {
             app.post("/processImage", async (request, response) => {
                 let dateString = `${request.body.year}-${request.body.month}-${request.body.day}`;
 
+                console.log("before fetch from API");
+
                 const res = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}&date=${dateString}`);
+
+                console.log("after fetch from API: " + res);
+                
                 const data = await res.json();
 
                 let result = await lookupSpaceImage(client, databaseAndCollection, dateString);
