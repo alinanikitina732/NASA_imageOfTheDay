@@ -79,14 +79,14 @@ async function main() {
 
             // get date
             app.get("/image", (request, response) => {
-                const variables = { url: `/image`,
+                const variables = { url: `/processImage`,
                                     home: `<a href=\"/\">HOME</a>` };
 
                 response.render("image", variables);
             });
 
             // post image from date
-            app.post("/image", async (request, response) => {
+            app.post("/processImage", async (request, response) => {
                 let dateString = `${request.body.year}-${request.body.month}-${request.body.day}`;
 
                 const res = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}&date=${dateString}`);
@@ -121,13 +121,13 @@ async function main() {
             });
 
             app.get("/lookupImage", (request, response) => {
-                const variables = { url: `/lookupImage`,
+                const variables = { url: `/processLookupImage`,
                                     home: `<a href=\"/\">HOME</a>` };
 
                 response.render("lookupImage", variables);
             });
 
-            app.post("/lookupImage", async (request, response) => {
+            app.post("/processLookupImage", async (request, response) => {
                 let dateString = request.body.imageDate;
 
                 let date = "NONE";
