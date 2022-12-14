@@ -32,7 +32,7 @@ if (process.argv.length != 3) {
     process.exit(1);
 }
 
-const portNumber = process.argv[2];
+const portNumber = process.env.PORT || process.argv[2];
 
 process.stdout.write("Web server started and running at http://localhost:" + portNumber + "\n");
 let prompt = "Stop to shutdown the server: ";
